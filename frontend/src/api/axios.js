@@ -1,37 +1,30 @@
 import axios from 'axios';
 
-// Uses VITE_API_URL in production, falls back to localhost in development.
-// Set VITE_API_URL in Vercel dashboard → Project → Settings → Environment Variables
-// Value: https://your-backend.up.railway.app/api
+// src/api/axios.js
+// In development:   VITE_API_URL is not set → uses localhost:8080
+// In production:    VITE_API_URL = https://YOUR.up.railway.app/api  (set in Vercel dashboard)
 
 const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8080/api',
-  headers: { 'Content-Type': 'application/json' },
-  withCredentials: true,
+    baseURL: import.meta.env.VITE_API_URL || 'http://localhost:8080/api',
+    headers: { 'Content-Type': 'application/json' },
+    withCredentials: true,
 });
 
-// Attach JWT token to every request automatically
-api.interceptors.request.use(
-  (config) => {
+api.interceptors.request.use((config) => {
     const token = localStorage.getItem('token');
-    if (token) {
-      config.headers.Authorization = `Bearer ${token}`;
-    }
+    if (token) config.headers.Authorization = `Bearer ${token}`;
     return config;
-  },
-  (error) => Promise.reject(error)
-);
+}, (error) => Promise.reject(error));
 
-// Auto-logout on 401 (token expired or invalid)
 api.interceptors.response.use(
-  (response) => response,
-  (error) => {
-    if (error.response?.status === 401) {
-      localStorage.clear();
-      window.location.href = '/login';
+    (response) => response,
+    (error) => {
+        if (error.response?.status === 401) {
+            localStorage.clear();
+            window.location.href = '/login';
+        }
+        return Promise.reject(error);
     }
-    return Promise.reject(error);
-  }
 );
 
 export default api;
