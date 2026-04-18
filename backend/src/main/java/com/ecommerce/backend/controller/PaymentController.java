@@ -16,10 +16,10 @@ import java.util.Map;
 @RequestMapping("/api/payment")
 public class PaymentController {
 
-    @Value("rzp_test_SevHswYIIjrxnH")
+    @Value("rzp_test_Sf2xc3e6wWSA3q")
     private String keyId;
 
-    @Value("KW0zx2wWVc2Z7pEuZs0ZDSyg")
+    @Value("M4qtE4kPUs8VlnpHFL2AvfKh")
     private String keySecret;
 
     /**
