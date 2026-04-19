@@ -10,6 +10,7 @@ out/
 # NEVER commit — contains real DB password and keys
 backend/src/main/resources/application.properties
 backend/src/main/resources/application-local.properties
+backend/application.properties
 
 # ── Frontend ──────────────────────────────────────────────────────────────────
 frontend/node_modules/

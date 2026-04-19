@@ -16,10 +16,10 @@ import java.util.Map;
 @RequestMapping("/api/payment")
 public class PaymentController {
 
-    @Value("rzp_test_Sf2xc3e6wWSA3q")
+    @Value("${razorpay.key.id}")
     private String keyId;
 
-    @Value("M4qtE4kPUs8VlnpHFL2AvfKh")
+    @Value("${razorpay.key.secret}")
     private String keySecret;
 
     /**

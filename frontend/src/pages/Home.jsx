@@ -1,6 +1,6 @@
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
-import Navbar from '../components/Navbar';
+
 
 const categories = [
   { name: 'Electronics', count: '2,400+', icon: '⚡', bg: '#0d0f1a', accent: '#4a6cf7' },
