@@ -1,22 +1,11 @@
-# backend/nixpacks.toml
-# ROOT CAUSE OF "secret SPRING_PROFILES_ACTIVE: not found":
-# Railway's Nixpacks builder tries to read ${SPRING_PROFILES_ACTIVE} at BUILD TIME
-# when auto-detecting the Spring Boot project type.
-# SPRING_PROFILES_ACTIVE is a runtime env var — it's NOT set during the build phase.
-#
-# FIX: This nixpacks.toml tells Railway exactly how to build WITHOUT needing any secrets.
-# Secrets are only needed at RUNTIME (when the app starts), not during Maven build.
-#
-# ALSO FIXED: nixPkgs = ["jdk17"] was wrong — correct package is "jdk17_headless"
-
 [phases.setup]
 nixPkgs = ["jdk17_headless", "maven"]
 
+[phases.install]
+cmds = ["chmod +x mvnw"]
+
 [phases.build]
-cmds = [
-    "chmod +x mvnw",
-    "mvn clean package -DskipTests -q"
-]
+cmds = ["mvn clean package -DskipTests -q"]
 
 [start]
 cmd = "java -Dspring.profiles.active=prod -jar target/backend-0.0.1-SNAPSHOT.jar"
