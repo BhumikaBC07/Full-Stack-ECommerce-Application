@@ -9,7 +9,7 @@
 // Types: 'success' | 'error' | 'info'
 
 import { useSelector, useDispatch } from 'react-redux';
-import { hideToast } from '../redux/slices/ToastSlice';
+import { hideToast } from '../redux/slices/toastSlice';
 import { useEffect } from 'react';
 
 const COLORS = {

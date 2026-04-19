@@ -2,7 +2,7 @@ import { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { useNavigate, Link } from 'react-router-dom';
 import { loginSuccess } from '../redux/slices/authSlice';
-import { showToast } from '../redux/slices/ToastSlice';
+import { showToast } from '../redux/slices/toastSlice';
 import api from '../api/axios';
 
 const Register = () => {
