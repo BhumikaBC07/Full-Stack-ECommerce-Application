@@ -1,0 +1,13 @@
+# Place this file at: backend/nixpacks.toml
+# It tells Railway's Nixpacks builder how to build your Spring Boot app.
+# IMPORTANT: API keys and secrets are NEVER needed at build time.
+# They are injected by Railway as environment variables at RUNTIME only.
+
+[phases.setup]
+nixPkgs = ["jdk17", "maven"]
+
+[phases.build]
+cmds = ["mvn clean package -DskipTests"]
+
+[start]
+cmd = "java -jar target/*.jar"
