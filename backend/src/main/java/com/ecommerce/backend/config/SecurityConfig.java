@@ -25,6 +25,8 @@ import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import java.util.Arrays;
 import java.util.List;
 
+// Paste into: backend/src/main/java/com/ecommerce/backend/config/SecurityConfig.java
+
 @Configuration
 @EnableWebSecurity
 @RequiredArgsConstructor
@@ -33,19 +35,14 @@ public class SecurityConfig {
     private final JwtFilter jwtFilter;
     private final UserDetailsService userDetailsService;
 
+    // Reads from application.properties (local) or Railway env var (prod)
     @Value("${allowed.origin:http://localhost:5173}")
     private String allowedOrigin;
 
     @Bean
     public CorsConfigurationSource corsConfigurationSource() {
         CorsConfiguration config = new CorsConfiguration();
-        // Allow localhost, the primary Vercel URL, and ALL Vercel preview URLs
-        config.setAllowedOriginPatterns(List.of(
-                "http://localhost:5173",
-                "http://localhost:3000",
-                "https://*.vercel.app",
-                allowedOrigin
-        ));
+        config.setAllowedOriginPatterns(List.of("http://localhost:5173", "https://*.vercel.app", allowedOrigin));
         config.setAllowedMethods(Arrays.asList("GET","POST","PUT","DELETE","OPTIONS","PATCH"));
         config.setAllowedHeaders(List.of("*"));
         config.setAllowCredentials(true);
