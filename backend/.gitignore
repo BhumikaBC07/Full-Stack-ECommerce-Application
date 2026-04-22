@@ -32,5 +32,10 @@ build/
 
 ### VS Code ###
 .vscode/
-backend/application.properties/
-backend/src/main/resources/application.properties/
+
+backend/src/main/resources/application.properties
+
+*.html
+*.eml
+qodana.yaml
+backend/application.properties
