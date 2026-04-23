@@ -12,7 +12,7 @@
 
 **A production-grade e-commerce application with JWT authentication, Razorpay payment integration, and role-based admin dashboard — deployed and live.**
 
-[🌐 Live Demo](https://full-stack-e-commerce-application-xols-8cfdfwidw.vercel.app) · [📂 Backend API](https://full-stack-ecommerce-application-production.up.railway.app/api/products) · [🐛 Report Bug](https://github.com/BhumikaBC07/Full-Stack-ECommerce-Application/issues)
+[🌐 Live Demo](https://full-stack-e-commerce-application-x.vercel.app) · [📂 Backend API](https://full-stack-ecommerce-application-production.up.railway.app/api/products) · [🐛 Report Bug](https://github.com/BhumikaBC07/Full-Stack-ECommerce-Application/issues)
 
 </div>
 
@@ -30,7 +30,7 @@ The project is **deployed end-to-end** on Railway (backend + MySQL) and Vercel (
 
 | Service | URL |
 |---|---|
-| Frontend (Vercel) | https://full-stack-e-commerce-application-xols-8cfdfwidw.vercel.app |
+| Frontend (Vercel) | https://full-stack-e-commerce-application-x.vercel.app |
 | Backend API (Railway) | https://full-stack-ecommerce-application-production.up.railway.app/api |
 
 **Test credentials** (or register your own):
