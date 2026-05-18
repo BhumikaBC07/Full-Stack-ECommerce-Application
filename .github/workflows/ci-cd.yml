@@ -61,8 +61,7 @@ jobs:
         working-directory: ./frontend
         run: npm run build
         env:
-          VITE_API_URL: ${{ secrets.VITE_API_URL || 'https://placeholder.railway.app/api' }}
-
+          VITE_API_URL: https://ecommerce-backend-xuka.onrender.com/api
   # ── Job 3: Deploy (only on push to main, not PRs) ─────────
   deploy:
     name: Trigger Railway Deploy
@@ -73,5 +72,5 @@ jobs:
     steps:
       - name: Trigger Railway redeploy
         run: |
-          curl -X POST "${{ secrets.RAILWAY_DEPLOY_HOOK }}"
+          curl -X POST "${{ secrets.RENDER_DEPLOY_HOOK }}"
           echo "Deploy triggered successfully"
