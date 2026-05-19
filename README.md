@@ -25,9 +25,6 @@
 
 ![Luxe Shop Demo](demo.gif)
 
-> 🔗 **Frontend:** https://full-stack-e-commerce-application-psi.vercel.app
-> 🔗 **Backend API:** https://ecommerce-backend-xuka.onrender.com/api/products
-
 **Test Credentials** — or register your own account at `/register`:
 
 | Role | Email | Password |
