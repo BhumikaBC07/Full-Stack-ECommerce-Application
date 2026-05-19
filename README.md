@@ -13,7 +13,7 @@
 
 **A production-grade, fully deployed full-stack e-commerce platform with JWT authentication, Razorpay payment integration, and a role-based admin dashboard.**
 
-[🌐 Live Demo](https://full-stack-e-commerce-application-psi.vercel.app) · [🔗 Backend API](https://ecommerce-backend-xuka.onrender.com/api/products) · [🐛 Report Bug](https://github.com/BhumikaBC07/Full-Stack-ECommerce-Application/issues)
+[🌐 Live Demo](https://full-stack-e-commerce-application-x.vercel.app/) · [🔗 Backend API](https://dashboard.render.com/web/srv-d825sdnavr4c739gqhn0) · [🐛 Report Bug](https://github.com/BhumikaBC07/Full-Stack-ECommerce-Application/issues)
 
 </div>
 
